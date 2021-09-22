@@ -16,30 +16,37 @@ The basis of the Extension API is described in a document which should be emulat
 
 _notice_: All new `./ext/ext-$name.md` docs MUST be added to this table.
 
-| `$name` (and definition) | Summary |
-|:--:|:--:|
-| [0](./ext-0.md) | Extensions discovering extensions on registry server |
-|  |  |
-
+| `$name`  | Summary                                              |
+|:------------------------:|:----------------------------------------------------:|
+| [ext](./ext.md)          | Extensions discovering extensions on registry server |
 
 ## Name
 
 Extension names MUST be unique.
-Names SHOULD include a version.
+Names MAY include a version as part after the extension name. Recommendation is to avoid version 
+and use `mediaType` directly to ensure behaviour change when possible.
 
-Each extension's endpoints will be nested below its name.
+Each extension's endpoints will be nested below its name similar to the
+base extension accessible under a repository.
 
 ```HTTP
-    GET /v2/ext/0/...
+    GET /v2/{name}/_ext/
 ```
 
 ## Filename
 
-XXX
+Extention definitions SHOULD be placed under `./ext/`. Extension files 
+should follow the `ext-$name.md`. Refer [ext.md](./ext.md) for more details.  
 
 ## Detail
 
-XXX acceptable error codes
+Extensions details should describe more endpoints and API that it MAY support and 
+also call out error codes encountered via the API are enumerated as in the 
+in the following table:
+
+| Code                | Message              | Description                                                                                                                                                                                            |
+|---------------------|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `EXTENSION_UNKNOWN` | Extension is unknown | This error MAY be returned when a extension is unknown to the registry in a specified repository. This can be returned with a standard get or if a manifest references an unknown layer during upload. |
 
 ## Prior Art
 
