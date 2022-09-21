@@ -34,7 +34,7 @@ Maintainers MUST send updates to the dev@opencontainers.org with results of thes
 Before the specification reaches v1.0.0, the meetings SHOULD be weekly.
 Once a specification has reached v1.0.0, the maintainers may alter the cadence, but a meeting MUST be held within four weeks of the previous meeting.
 
-The release plans, corresponding milestones and estimated due dates MUST be published on GitHub (e.g. https://github.com/opencontainers/runtime-spec/milestones).
+The release plans, corresponding milestones and estimated due dates MUST be published on GitHub (e.g. https://github.com/opencontainers/distribution-spec/milestones).
 GitHub milestones and issues are only used for community organization and all releases MUST follow the [project governance](GOVERNANCE.md) rules and procedures.
 
 ### Timelines
